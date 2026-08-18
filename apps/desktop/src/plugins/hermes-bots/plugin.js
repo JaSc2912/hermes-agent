@@ -6860,11 +6860,11 @@ function RoutineRow({ job, profile }) {
         children: [
           jsxs('span', {
             className:
-              'inline-flex items-center gap-1 rounded-full border border-(--ui-stroke-secondary) px-1.5 py-0.5 text-[0.65rem] text-(--ui-text-tertiary)',
+              'inline-flex shrink-0 items-center gap-1 rounded-full border border-(--ui-stroke-secondary) px-1.5 py-0.5 text-[0.65rem] text-(--ui-text-tertiary)',
             children: [jsx(Codicon, { name: 'calendar', className: 'text-[0.7rem]' }), scheduleLabel(job.schedule)]
           }),
           jsx('span', {
-            className: 'truncate text-[0.65rem] text-(--ui-text-quaternary)',
+            className: 'min-w-0 flex-1 truncate text-right text-[0.65rem] text-(--ui-text-quaternary)',
             children: active && job.next_run_at ? `next ${relativeTime(new Date(job.next_run_at).getTime())}` : 'paused'
           })
         ]
